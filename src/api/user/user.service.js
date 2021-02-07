@@ -5,7 +5,7 @@ class UserService {
    * @description Get a list of users from github api.
    * @returns {array} users
    */
-  async getUsers({ since = 0, per_page = 10 }) {
+  async getUsers({ since = 0, per_page = 100 }) {
     LOGGER.info(
       `Entering in methods getUserRepos, with query parameter - since: [${since}] and per_page: [${per_page}].`
     );
