@@ -3,7 +3,7 @@ const Server = require("./server");
 const config = require("./config");
 const bluebird = require("bluebird");
 
-const PORT = process.env.SHAWANDPARTNERS_CHALLENGE_API_PORT || config.api.port;
+const PORT = process.env.PORT || config.api.port;
 
 global.Promise = bluebird;
 
