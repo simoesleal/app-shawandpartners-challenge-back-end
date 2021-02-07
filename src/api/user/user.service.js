@@ -5,7 +5,7 @@ class UserService {
    * @description Get a list of users from github api.
    * @returns {array} users
    */
-  async getUsers({ since = 1000, per_page = 10 }) {
+  async getUsers({ since = 0, per_page = 10 }) {
     LOGGER.info(
       `Entering in methods getUserRepos, with query parameter - since: [${since}] and per_page: [${per_page}].`
     );
@@ -86,16 +86,16 @@ class UserService {
 
   /**
    * @description Search for github complete information from an user, filtering by his/her login.
-   * @param {string} username
+   * @param {string} params
    * @returns {json} dbResponse
    */
-  async getCompleteUser({ username }) {
+  async getCompleteUser(params) {
     LOGGER.info(
-      `Entering in methods getCompleteUser, with parameters - login/username: [${username}].`
+      `Entering in methods getCompleteUser, with parameters - login/username: [${params}].`
     );
     try {
-      const user = await this.getUserDetails(username);
-      const repos = await this.getUserRepos(username);
+      const user = await this.getUserDetails(params);
+      const repos = await this.getUserRepos(params);
       LOGGER.info("Returning response from method getCompleteUser.");
       return { user, repos };
     } catch (error) {
