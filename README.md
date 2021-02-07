@@ -19,3 +19,9 @@ npm run dev
 ```
 npm run test
 ```
+
+### Run your unit tests with coverage
+
+```
+npm run test-watch
+```
