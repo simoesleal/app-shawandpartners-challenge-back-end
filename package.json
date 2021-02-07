@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test-watch": "jest --watchAll",
     "dev": "cross-env NODE_ENV=development nodemon src",
     "start": "node src"
   },

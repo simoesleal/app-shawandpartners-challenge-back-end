@@ -27,7 +27,7 @@ class UserDataSource {
       return data;
     } catch (error) {
       LOGGER.error(
-        `Error while getting the list of states. Message: ${error.message}.`
+        `Error while getting the list of users. Message: ${error.message}.`
       );
       throw error;
     }
