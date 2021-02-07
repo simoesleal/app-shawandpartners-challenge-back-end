@@ -15,13 +15,13 @@ class UserDataSource {
         `Calling the external service: ${GIT_HUB_API}/users?since=${since}&per_page=${per_page}`
       );
       const { data } = await axios.get(
-        `${GIT_HUB_API}/users?since=${since}&per_page=${per_page}` /* ,
+        `${GIT_HUB_API}/users?since=${since}&per_page=${per_page}`,
         {
           headers: {
             Authorization:
               process.env.SHAWANDPARTNERS_CHALLENGE_GITHUB_OAUTH_SECRET,
           },
-        } */
+        }
       );
       LOGGER.info(`External service respond with success`);
       return data;
@@ -44,14 +44,12 @@ class UserDataSource {
       LOGGER.info(
         `Calling the external service: ${GIT_HUB_API}/users/${username}`
       );
-      const { data } = await axios.get(
-        `${GIT_HUB_API}/users/${username}` /* , {
+      const { data } = await axios.get(`${GIT_HUB_API}/users/${username}`, {
         headers: {
           Authorization:
             process.env.SHAWANDPARTNERS_CHALLENGE_GITHUB_OAUTH_SECRET,
         },
-      } */
-      );
+      });
       LOGGER.info(`External service respond with success`);
       return data;
     } catch (error) {
@@ -74,13 +72,13 @@ class UserDataSource {
         `Calling the external service: ${GIT_HUB_API}/users/${username}/repos`
       );
       const { data } = await axios.get(
-        `${GIT_HUB_API}/users/${username}/repos` /* ,
+        `${GIT_HUB_API}/users/${username}/repos`,
         {
           headers: {
             Authorization:
               process.env.SHAWANDPARTNERS_CHALLENGE_GITHUB_OAUTH_SECRET,
           },
-        } */
+        }
       );
       LOGGER.info(`External service respond with success`);
       return data;
