@@ -17,11 +17,7 @@ class UserController {
     LOGGER.info("Entering in method getUsers.");
     try {
       const response = await UserService.getUsers(req.query);
-      LOGGER.info(
-        `Successfully answered the getUsers request. Response: ${JSON.stringify(
-          response
-        )}.`
-      );
+      LOGGER.info(`Successfully answered the getUsers request.`);
       return res
         .status(HTTP_OK)
         .json(new ApiResultData(HTTP_OK, "List of users loaded!", response));
@@ -49,11 +45,7 @@ class UserController {
     LOGGER.info("Entering in method getUser.");
     try {
       const response = await UserService.getUser(req.params);
-      LOGGER.info(
-        `Successfully answered the getUser request. Response: ${JSON.stringify(
-          response
-        )}.`
-      );
+      LOGGER.info(`Successfully answered the getUser request.`);
       return res
         .status(HTTP_OK)
         .json(
@@ -83,11 +75,7 @@ class UserController {
     LOGGER.info("Entering in method getUserRepos.");
     try {
       const response = await UserService.getUserRepos(req.params);
-      LOGGER.info(
-        `Successfully answered the getUserRepos request. Response: ${JSON.stringify(
-          response
-        )}.`
-      );
+      LOGGER.info(`Successfully answered the getUserRepos request.`);
       return res
         .status(HTTP_OK)
         .json(
@@ -121,11 +109,7 @@ class UserController {
     LOGGER.info("Entering in method getUserDetails.");
     try {
       const response = await UserService.getUserDetails(req.params);
-      LOGGER.info(
-        `Successfully answered the getUserDetails request. Response: ${JSON.stringify(
-          response
-        )}.`
-      );
+      LOGGER.info(`Successfully answered the getUserDetails request.`);
       return res
         .status(HTTP_OK)
         .json(
@@ -159,11 +143,7 @@ class UserController {
     LOGGER.info("Entering in method getCompleteUser.");
     try {
       const response = await UserService.getCompleteUser(req.params);
-      LOGGER.info(
-        `Successfully answered the getCompleteUser request. Response: ${JSON.stringify(
-          response
-        )}.`
-      );
+      LOGGER.info(`Successfully answered the getCompleteUser request.`);
       return res
         .status(HTTP_OK)
         .json(
